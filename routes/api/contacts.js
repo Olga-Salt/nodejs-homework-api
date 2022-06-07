@@ -19,7 +19,7 @@ router.put(
 );
 
 router.patch(
-  "/:contactId/favotite",
+  "/:contactId/favorite",
   validationMiddleWare(favoriteJoiSchema),
   ctrlWrapper(contacts.updateStatus)
 );
