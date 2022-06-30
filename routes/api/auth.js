@@ -22,4 +22,5 @@ router.post(
 );
 
 router.get("/logout", authMiddleWare, ctrlWrapper(auth.logout));
+
 module.exports = router;
