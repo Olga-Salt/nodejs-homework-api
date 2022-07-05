@@ -14,8 +14,10 @@ router.get("/current", authMiddleWare, ctrlWrapper(users.getCurrent));
 router.patch(
   "/avatars",
   uploadMiddleWare.single("avatar"),
-  authMiddleWare,
-  ctrlWrapper(users.updateAvatar)
+  authMiddleWare
+  // ctrlWrapper(users.updateAvatar)
 );
 
+router.get("/verify/:verificationToken", ctrlWrapper(users.verifyEmail));
+router.post("/verify", ctrlWrapper(users.resendEmail));
 module.exports = router;
